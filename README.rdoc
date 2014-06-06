@@ -1,0 +1,44 @@
+RAILS study guide
+
+STEP 1
+
+  rails new myapp --database=postgresql<br />
+  rails s (server)
+STEP 2
+  
+  rails generate controller name<br />  
+      app/controllers/name_controller.rb<br />  
+          class NameController < ApplicationController<br />  
+      app/views/user
+  rails generate model name<br />  
+      app/models/name.rb<br />   
+      app/db/migrate/20140605232950_create_names.rb<br />   
+
+STEP 3
+
+  in app/config/routes.rb<br />   
+    setting a custom root path: <br />  
+    root :to => redirect('/dashboard')<br />  
+    match '/dashboard', :to => "dashboard#index"<br /> 
+    resources: names, only: [:index, :new, :create]<br />    
+
+
+
+
+HTTP      Verb Path         Controller#Action     Used for<br />  
+GET       /photos           photos#index          display a list of all photos<br />  
+GET       /photos/new       photos#new            return an HTML form for creating a new photo<br />  
+POST      /photos           photos#create         create a new photo<br />  
+GET       /photos/:id       photos#show           display a specific photo<br />  
+GET       /photos/:id/edit  photos#edit           return an HTML form for editing a photo<br />  
+PATCH/PUT /photos/:id       photos#update         update a specific photo<br />  
+DELETE    /photos/:id       photos#destroy        delete a specific photo<br />   
+
+
+
+
+
+
+  
+
+
